@@ -31,18 +31,17 @@ public class mainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        file = new File("space.mp4");
+        media = new Media(file.toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
 
     }
 
 
     public void Click1(javafx.event.ActionEvent e) throws IOException {
-        file = new File("sea.mp4");
-        media = new Media(file.toURI().toString());
-        mediaPlayer = new MediaPlayer(media);
+
+
         MediaView mediaView= new MediaView(mediaPlayer);
-
-
 
         root =  FXMLLoader.load(getClass().getResource("secondBoard.fxml"));
         root.getChildren().add(mediaView);
@@ -52,7 +51,9 @@ public class mainController implements Initializable {
         stage.setTitle("yooyo");
         stage.setFullScreen(true);
         stage.show();
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         mediaPlayer.play();
+
 
     }
 }
