@@ -42,6 +42,8 @@ public class mainController implements Initializable {
 
 
         MediaView mediaView= new MediaView(mediaPlayer);
+        mediaView.setFitHeight(1080);
+
 
         root =  FXMLLoader.load(getClass().getResource("secondBoard.fxml"));
         root.getChildren().add(mediaView);
