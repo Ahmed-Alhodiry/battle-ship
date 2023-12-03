@@ -1,7 +1,10 @@
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+
 
 import java.io.IOException;
 
@@ -13,6 +16,7 @@ public class Main extends Application {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("firstBoard.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Hello!");
+
             stage.setScene(scene);
             stage.setFullScreen(true);
             stage.show();
